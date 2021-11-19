@@ -1,0 +1,386 @@
+/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+  /* content-boxではpadding,borderの分だけコンテンツの横幅や大きさが大きくなってしまうので
+  計算してwidthを出す必要がある
+  border-boxでは要素の横幅や高さが自動的に計算される＝一般的に用いられる*/
+}
+
+a {
+  text-decoration: none;
+}
+/* リンクの下線部を消す */
+
+header, nav, h2, .main-visual, footer {
+  font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+header {
+  width: 90%; /* 横幅90% */
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;}
+
+.social i {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.social {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.main-visual{
+  width: 100%;
+  height: 300px;
+  background-image: url(img/mv.jpg);
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+   background-position: center; /* 背景画像を中央に配置 */
+}
+
+/* セレクタ {
+  background-size: 値;
+  background-size: 画像の幅 画像の高さ;
+}
+
+セレクタ {
+  元画像のサイズを維持したまま、自動的に表示される 初期値 
+  background-size: auto;
+
+  画像の縦横比を維持したまま、領域全体を埋め尽くすまで伸縮される（画像全体が表示される） 
+  background-size: contain;
+
+  /* 画像の縦横比を維持したまま、領域全体をおおうサイズで伸縮される（画像の表示されない部分も発生） 
+  background-size: cover;
+
+  /* 表示領域の幅100％ 高さ100％で表示（縦横比は無視） 
+  background-size: 100% 100%;
+
+  /* pxを指定して表示 
+  background-size: 24px auto;
+}
+
+セレクタ {
+  background-position: 値;
+  background-position: 値 値;
+}
+
+background-positionはbackground-imageがある時にだけ使用する
+top （上に配置）
+right （右に配置）
+bottom （下に配置）
+left （左に配置）
+center （中央に配置）
+*/
+
+.main-visual-content{
+  width:350px;
+  height:300px;
+  width: 40%; /* 横幅40% */
+  background-color: rgba(0,0,0,0.5);
+  text-align: center; /* 文字を中央揃えにする */
+  padding-top: 105px; /* 上側の内側余白で垂直方向の位置を調整 */
+}
+
+.main-visual-text {
+  color: #fff; /* 文字色を白に変更 */
+}
+
+.main-visual-name {
+  margin-top: 30px; /* 上側の外側の余白 */
+  color: #fff; /* 文字色を白に変更 */
+}
+
+/* RGBAで背景色を指定する
+rgb(0, 0, 0) ……………「黒」が適用される
+rgb(255, 255, 255) ……「 白」が適用される
+rgba(0, 0, 0, 0.5) …………「半透明の黒」が適用される
+rgba(255, 255, 255, 1) ……「不透明の白」が適用される
+ */
+
+main {
+  width: 800px; /* 横幅800px */
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 要素の横並び・中央寄せ */
+  margin: 0 auto; /* 要素の中央揃え */
+  padding: 70px 0; /* 上下に70px、左右に0pxの内側余白 */
+}
+
+.blog {
+  width:540px;
+  margin-right:30px;
+}
+
+.blog-heading {
+  border-bottom: 8px solid #f7f7f7;
+  text-align: center;
+  line-height: 0.6;
+}
+
+.blog-box {
+  padding-top: 50px;
+}
+
+.blog-item {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.blog-image {
+  height: 180px;
+}
+
+.blog-text {
+  padding: 25px 0 0 30px;
+}
+
+.blog-text-heading {
+  padding-bottom: 15px;
+}
+
+.blog-date {
+  font-size: 12px;
+  display: inline-block;
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 8px;
+  background-color: #acabab;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.sidebar {
+  width:230px;
+}
+
+.common-heading {
+  border-bottom: 8px solid #f7f7f7;
+  text-align: center;
+  line-height: 0.6;
+}
+
+.sidebar-contents {
+  padding: 50px 0;
+}
+
+.popular-text,
+.categories-text {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f7f7f7;
+  margin-bottom: 5px;
+}
+
+.popular-text:last-child,
+.categories-text:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.instagram .sidebar-contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.instagram-box {
+  width: 110px;
+  padding-top: 110px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.instagram-box:nth-child(odd) {
+  margin-right: 10px;
+}
+
+.instagram-box:nth-child(1) {
+  background-image: url(img/airport.jpg);
+}
+
+.instagram-box:nth-child(2) {
+  background-image: url(img/japan.jpg);
+}
+
+.instagram-box:nth-child(3) {
+  background-image: url(img/snow.jpg);
+}
+
+.instagram-box:nth-child(4) {
+  background-image: url(img/japan2.jpg);
+}
+
+.instagram-box:nth-child(5) {
+  background-image: url(img/lake.jpg);
+}
+
+.instagram-box:nth-child(6) {
+  background-image: url(img/road.jpg);
+}
+
+header .heading { /* headerタグ内のheadingクラスにのみ反映される */
+  font-size: 32px;
+}
+
+.pagination {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.pagination p {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  color: #fff;
+  background-color: #acabab;
+  border-radius: 3px;
+  line-height: 30px;
+}
+
+/* ページ内すべてのh1要素に適応される 
+h1 {
+  font-size: 32px;
+} */
+
+h1, h2 {
+  /* h1要素とh2要素の両方に適用される */
+}
+header>h1 {
+  /* header要素の直下にあるh1要素に適用される */
+}
+h1#header {
+  /* id名「header」のh1要素に適用される */
+}
+
+/* headerクラス内にあるh1要素に対してのみ適応される 
+.header h1 {
+  font-size: 32px;
+}*/
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+/* lifestyleプロパティ箇条書きリストの行頭のスタイルを変えられる 
+　disc 黒丸、none マークなし、circle 白丸、square 黒四角、*/
+
+/* text-alignプロパティ　行揃え　left（左揃え）、center（中央揃え）、right（右揃え） */
+
+/* displayプロパティ
+ブロックレベル要素 div要素、header要素、nav要素、h1要素～h6要素、p要素、ul要素、ol要素
+横に空きがあっても縦並びになる
+インライン要素　strong要素、img要素、span要素、a要素　横並びになる
+
+ブロックレベル要素内には、ブロックレベル要素やインライン要素を配置できる
+インライン要素内には、インライン要素しか配置できない（ブロックレベル要素は配置できない）
+
+インラインブロック要素
+
+１. テキストの中央揃え
+中央揃えにしたいテキストの親要素にあたるブロック要素に、text-align: center;を設定します。
+
+２. 画像の中央揃え
+画像のimgタグはインライン要素なので、テキストと同じ扱いになります。親要素に、text-align: center; を設定します。
+
+３. ブロックレベル要素の中央揃え
+中央揃えにしたい要素の親要素に、Flexboxの設定を行います。
+
+上下の中央揃え　line-height: px 値はボックスの高さ*/
+
+footer {
+  width: 100%; /* 横幅 */
+  height: 120px; /* 高さ */
+ text-align: center;
+  line-height: 120px;
+  background-color: #848282;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+@media screen and (max-width: 425px) {
+  header {
+    width: 100%;
+  }
+
+  .nav-list {
+    width: 100%;
+  }
+
+  .nav-list-item {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  .social {
+    display: none;
+  }
+
+  .main-visual-content {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+    display: block;
+  }
+
+  .blog {
+    width: 100%;
+    margin: 0;
+  }
+
+  .blog-box {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .blog-image {
+    width: 49%;
+  }
+
+  .blog-text {
+    width: 49%;
+    padding-top: 5px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .instagram-box {
+    width: 48%;
+    padding-top: 48%;
+  }
+
+  .instagram-box:nth-child(odd) {
+    margin-right: 4%;
+  }
+
+  .pagination {
+    margin-bottom: 50px;
+  }
+}
